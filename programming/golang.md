@@ -19,7 +19,7 @@ func (l Log) Print(s string) {
 
 // test takes a Printer, but we don't need to implement what we don't use inside of it
 func test(p Printer) {
-	p.Print("This is a test") // debug: This is a test
+  p.Print("This is a test") // debug: This is a test
   // p.Setup(4, "hello") // This would raise an error instead
 }
 
