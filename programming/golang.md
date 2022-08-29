@@ -4,17 +4,17 @@
 Useful to test libraries or in general functions taking interfaces as parameter without implementing all the methods.
 ```go
 type Printer interface {
-	Print(string)
-	Setup(int, string) // No need to implement all
+  Print(string)
+  Setup(int, string) // No need to implement all
 }
 
 type Log struct {
-	prefix string
-	Printer // Embed
+  prefix string
+  Printer // Embed
 }
 
 func (l Log) Print(s string) {
-	fmt.Printf("%s: %s\n", l.prefix, s)
+  fmt.Printf("%s: %s\n", l.prefix, s)
 }
 
 // test takes a Printer, but we don't need to implement what we don't use inside of it
@@ -24,8 +24,8 @@ func test(p Printer) {
 }
 
 func main() {
-	l := Log{ prefix: "debug" }
-	test(l)
+  l := Log{ prefix: "debug" }
+  test(l)
 }
 ```
 
