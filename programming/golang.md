@@ -33,7 +33,7 @@ func main() {
 
 ## Channels
 
-### Close a channel
+### Stop routine through channel
 
 ```go
 func routine(stop chan bool) {
@@ -66,8 +66,42 @@ func main() {
 // 0 1 2 3 4 5 6 7 8 9 10 11 12
 ```
 
-### XXX
+### Close channel
 ```go
+func routine(stop chan bool, done chan bool) {
+  i := 0
+  for {
+    v, ok := <-stop
+    fmt.Println(i, v)
+    if ok {
+      i++
+      continue
+    } else {
+      done <- true
+      return
+    }
+    time.Sleep(500 * time.Millisecond)
+  }
+}
+
+func main() {
+  stop := make(chan bool)
+  done := make(chan bool)
+  go routine(stop, done)
+  for i := 0; i < 5; i++ {
+    time.Sleep(1 * time.Second)
+    stop <- true
+  }
+  close(stop)
+  <-done
+}
+
+// 0 true
+// 1 true
+// 2 true
+// 3 true
+// 4 true
+// 5 false
 ```
 
 ### XXX
