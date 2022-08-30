@@ -104,8 +104,25 @@ func main() {
 // 5 false
 ```
 
-### XXX
+## Strings, []byte, []rune
+
+### Reverse a string
 ```go
+func reverseR(b []rune) []rune {
+	l := len(b)
+	if l <= 1 {
+		return b
+	}
+	return append([]rune{b[l-1]}, reverseR(b[:l-1])...)
+}
+
+func reverseS(s string) string {
+	return string(reverseR([]rune(s)))
+}
+
+func main() {
+	fmt.Println(reverseS("Hello, 世界!")) // !界世 ,olleH
+}
 ```
 
 ### XXX
