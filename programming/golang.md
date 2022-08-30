@@ -1,5 +1,7 @@
 # Go
 
+## Interfaces and structs
+
 ### Embedding a struct
 Useful to test libraries or in general functions taking interfaces as parameter without implementing all the methods.
 ```go
@@ -29,8 +31,39 @@ func main() {
 }
 ```
 
-### XXX
+## Channels
+
+### Close a channel
+
 ```go
+func routine(stop chan bool) {
+  i := 0
+  for {
+    select {
+    case ok := <-stop:
+      if ok {
+        continue
+      }
+      return
+    default:
+      fmt.Printf("%d ", i)
+      i++
+    }
+    time.Sleep(500 * time.Millisecond)
+  }
+}
+
+func main() {
+  stop := make(chan bool)
+  go routine(stop)
+  for i := 0; i < 10; i++ {
+    time.Sleep(1 * time.Second)
+    stop <- true
+  }
+  stop <- false
+}
+
+// 0 1 2 3 4 5 6 7 8 9 10 11 12
 ```
 
 ### XXX
