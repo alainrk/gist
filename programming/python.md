@@ -1,0 +1,71 @@
+# Python
+
+## Lists
+
+```py
+# Indexing
+l =  [0,  1,  2,  3,  4,  5]
+# P:  0   1   2   3   4   5
+# N: -6  -5  -4  -3  -2  -1
+
+# Slicing
+# l[START_INCLUDED : END_NOT_INCLUDED : STEP]
+
+# Positive Slicing
+print(l[0:2]) # 0, 1
+# Negative Slicing
+print(l[-3:-1]) # 3, 4
+# Step
+print(l[0:4:2]) # 0, 2
+
+List Concatenation and Replication:
+When we merge the contents of 2 lists into one list, it is called list concatenation.
+
+# Concatenation
+print(l + [6]) # [0, 1, 2, 3, 4, 5, 6]
+# Replication
+print([1, 2] * 2) # [1, 2, 1, 2]
+# Deletion
+del l[2] # [0, 1, 3, 4, 5]
+
+# Loop
+for x in [7, 8, 9]:
+  print(ex)
+'''
+7
+8
+9
+'''
+# Loop enumerated
+for i, x in enumerate([7, 8, 9]):
+  print(i, x)
+'''
+0 7
+1 8
+2 9
+'''
+
+# Insert
+l.insert(1, 999) # [0, 999, 1, 2, ...]
+# Append
+l.append(999) # [0, ..., 999]
+
+# Sort
+l = [2, 3, 1, 6]
+## Ascending
+l.sort() # [1, 2, 3, 6]
+## Descending
+l.sort(reverse = True) # [6, 3, 2, 1]
+```
+
+### XXX
+```py
+```
+
+### XXX
+```py
+```
+
+### XXX
+```py
+```
