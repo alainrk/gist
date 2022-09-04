@@ -56,10 +56,48 @@ l = [2, 3, 1, 6]
 l.sort() # [1, 2, 3, 6]
 ## Descending
 l.sort(reverse = True) # [6, 3, 2, 1]
+# Returns a new sorted list
+sorted(l, [reverse])
 ```
 
-### XXX
+### Global
 ```py
+# Modify a global value from inside a function
+def func():
+  global value
+  value = "Local"
+
+value = "Global"
+func()
+print(value) # Local
+```
+
+### Exception handling
+```py
+def divide(a, den):
+  try:
+    return a / den
+  except ZeroDivisionError as e:
+    print('Div by 0')
+  except Exception as e:
+    print('Another error:', e)
+  finally:
+    print('Always printed')
+```
+
+### Math
+```py
+# Integer div
+5 // 2 # 2
+# Normal div
+3 / 2 # 1.5
+
+# Modulo
+3 % 2 # 1
+
+# Power
+2 ** 3 # 8
+math.pow(2, 3) # 8.0
 ```
 
 ### XXX
