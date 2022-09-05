@@ -60,6 +60,37 @@ l.sort(reverse = True) # [6, 3, 2, 1]
 sorted(l, [reverse])
 ```
 
+### Sets
+```py
+# Equivalent way to define an UNSORTED collection of UNIQUE values
+s = {1, 1, 2, 2, 3} # 1, 2, 3
+s = set([1, 1, 2, 2, 3]) # 1, 2, 3
+s = {1, 1, 2, 2, 3} # 1, 2, 3
+
+# Add element(s)
+a.add(6)
+a.update([5, 6, 7])
+
+# Remove element
+a.remove(6) # RAISE error if 6 not in a
+a.discard(6) # QUIET -> No raise error if 6 not in a
+
+# Operations
+a, b = set([1, 2, 3]), set([3, 4, 5])
+## Union "|"
+print(a | b) # set([1, 2, 3, 4, 5])
+## Intersection "&"
+print(a & b) # set([3])
+## Difference "-"
+print(a - b) # set([1, 2])
+## Symmetric Difference "^"
+print(a ^ b) # set([1, 2, 4, 5])
+```
+
+### Queue
+```py
+
+```
 ### Global
 ```py
 # Modify a global value from inside a function
