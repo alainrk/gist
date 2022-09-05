@@ -87,10 +87,38 @@ print(a - b) # set([1, 2])
 print(a ^ b) # set([1, 2, 4, 5])
 ```
 
-### Queue
+### Comprehension
 ```py
-
 ```
+
+### Strings
+```py
+```
+
+### Regex
+```py
+```
+
+### Lambda
+```py
+```
+
+### Dictionaries
+```py
+```
+
+### Stack
+```py
+```
+
+### Date and Time
+```py
+```
+
+### Args, Kwargs
+```py
+```
+
 ### Global
 ```py
 # Modify a global value from inside a function
@@ -129,12 +157,4 @@ def divide(a, den):
 # Power
 2 ** 3 # 8
 math.pow(2, 3) # 8.0
-```
-
-### XXX
-```py
-```
-
-### XXX
-```py
 ```
