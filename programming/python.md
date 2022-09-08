@@ -107,8 +107,21 @@ print(a ^ b) # set([1, 2, 4, 5])
 ```py
 ```
 
-### Stack
+### Stacks
 ```py
+```
+
+### Queues
+```py
+from queue import Queue
+q = Queue([maxsize=0])
+# Size handling
+q.empty()
+q.full()
+q.qsize()
+# Operations
+q.get() # get_nowait is the no-wat version for empty queue
+q.put(10)
 ```
 
 ### Date and Time
