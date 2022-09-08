@@ -18,9 +18,6 @@ print(l[-3:-1]) # 3, 4
 # Step
 print(l[0:4:2]) # 0, 2
 
-List Concatenation and Replication:
-When we merge the contents of 2 lists into one list, it is called list concatenation.
-
 # Concatenation
 print(l + [6]) # [0, 1, 2, 3, 4, 5, 6]
 # Replication
