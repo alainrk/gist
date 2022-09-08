@@ -109,19 +109,28 @@ print(a ^ b) # set([1, 2, 4, 5])
 
 ## Stacks
 ```py
+# LIFO - Using lists
+s = []
+s.append(2)
+s.append(3)
+s.pop() # 3
 ```
 
 ## Queues
 ```py
+# FIFO - Through library
 from queue import Queue
+
 q = Queue([maxsize=0])
+
 # Size handling
 q.empty()
 q.full()
 q.qsize()
 # Operations
-q.get() # get_nowait is the no-wat version for empty queue
 q.put(10)
+q.put(12)
+q.get() # 10 -- get_nowait is the no-wat version for empty queue
 ```
 
 ## Date and Time
