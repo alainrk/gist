@@ -60,7 +60,7 @@ l.sort(reverse = True) # [6, 3, 2, 1]
 sorted(l, [reverse])
 ```
 
-### Sets
+## Sets
 ```py
 # Equivalent way to define an UNSORTED collection of UNIQUE values
 s = {1, 1, 2, 2, 3} # 1, 2, 3
@@ -87,31 +87,31 @@ print(a - b) # set([1, 2])
 print(a ^ b) # set([1, 2, 4, 5])
 ```
 
-### Comprehension
+## Comprehension
 ```py
 ```
 
-### Strings
+## Strings
 ```py
 ```
 
-### Regex
+## Regex
 ```py
 ```
 
-### Lambda
+## Lambda
 ```py
 ```
 
-### Dictionaries
+## Dictionaries
 ```py
 ```
 
-### Stacks
+## Stacks
 ```py
 ```
 
-### Queues
+## Queues
 ```py
 from queue import Queue
 q = Queue([maxsize=0])
@@ -124,15 +124,15 @@ q.get() # get_nowait is the no-wat version for empty queue
 q.put(10)
 ```
 
-### Date and Time
+## Date and Time
 ```py
 ```
 
-### Args, Kwargs
+## Args, Kwargs
 ```py
 ```
 
-### Global
+## Global
 ```py
 # Modify a global value from inside a function
 def func():
@@ -144,7 +144,7 @@ func()
 print(value) # Local
 ```
 
-### Exception handling
+## Exception handling
 ```py
 def divide(a, den):
   try:
@@ -157,7 +157,7 @@ def divide(a, den):
     print('Always printed')
 ```
 
-### Math
+## Math
 ```py
 # Integer div
 5 // 2 # 2
@@ -170,4 +170,30 @@ def divide(a, den):
 # Power
 2 ** 3 # 8
 math.pow(2, 3) # 8.0
+```
+
+## Virtualenv
+```sh
+pip install virtualenv
+
+cd MyProject
+
+# Create a new venv (inherit global installed packages)
+virtualenv venv --system-site-packages
+
+# Activate the venv (for each terminal used inside the project)
+source venv/bin/activate
+
+# Install all the local dependencies (make sure "(venv)" is in your prompt)
+pip install <package>
+
+# Remember to gitignore it
+echo "venv/" >> .gitignore
+
+# Deactivate the venv
+deactivate
+
+## Note: for better handling of multiple projects use virtualenvwrapper
+## It setups all virtual environments in ~/.virtualenv
+pip install virtualenvwrapper
 ```
