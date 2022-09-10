@@ -98,10 +98,26 @@ print(a ^ b) # set([1, 2, 4, 5])
 
 ## Lambda
 ```py
+# Anonymous function
+double = lambda a: a * 2
+double(3) # 6
+
+l = [1, 2, 3]
+list(map(double, l)) # [2, 4, 6]
 ```
 
 ## Dictionaries
 ```py
+d = { "mon": 1, "tue": 2, "wed": 3 }
+
+# These can be used in for loops for many things
+d.keys() # ["mon", "tue", "wed"]
+d.values() # [1, 2, 3]
+d.items() # [("mon": 1), ("tue": 2), ("wed": 3)]
+
+# Update in batch
+d.update({ "mon": 0, "thu": 4 })
+print(d) # { "mon": 0, "tue": 2, "wed": 3, "thu": 4 }
 ```
 
 ## Stacks
