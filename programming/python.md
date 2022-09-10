@@ -86,6 +86,15 @@ print(a ^ b) # set([1, 2, 4, 5])
 
 ## Comprehension
 ```py
+# List
+l = [0, 1, 2]
+[x + 1 for x in l] # [1, 2, 3]
+# Set
+s = {0, 1, 2}
+set([x + 1 for x in s]) # set(1, 2, 3)
+# Dict
+d = { "zero": 0, "one": 1, "two": 2 }
+{ k: v+1 for k, v in d.items() }
 ```
 
 ## Strings
