@@ -172,14 +172,13 @@ range(3, -1, -1) # [3, 2, 1, 0]
 a = ["a", "b", "c"]
 b = [1, 2, 3]
 list(zip(a, b)) # [('a', 1), ('b', 2), ('c', 3)]
-```
 
-## Date and Time
-```py
-```
-
-## Args, Kwargs
-```py
+# min, max, sum, any, all
+min([1, 2, 3]) # 1
+max([1, 2, 3]) # 3
+sum([1, 2, 3]) # 6
+any(map(lambda x: x > 0, [-1, -2, 3])) # True
+all(map(lambda x: x > 0, [-1, -2, 3])) # False
 ```
 
 ## Global
@@ -224,10 +223,30 @@ math.pow(2, 3) # 8.0
 
 ## Strings
 ```py
+# Basics
+a = "Hello"
+a.upper() # 'HELLO'
+a.lower() # 'hello'
+a.isupper() # False
+a.islower() # False
+
+# Join and split
+l = ["one", "two", "three"]
+s = ",".join(l) # "one,two,three"
+s.split(",") # ["one", "two", "three"]
 ```
 
-## Regex
+## Args, Kwargs
 ```py
+# Multiple args, can be used as "rest" def test(x, y, *argv)
+def test(*argv):
+  print(argv)
+
+def testk(**kwargs):
+  print(dict(kwargs.items()))
+
+test(1, 2) # [1, 2]
+testk(one = 1, two = 2) # {"one": 1, "two": 2}
 ```
 
 ## Virtualenv
