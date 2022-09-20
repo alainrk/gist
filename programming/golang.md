@@ -125,8 +125,65 @@ func main() {
 }
 ```
 
-### XXX
+### HTTP Client and Server example
 ```go
+package main
+
+import (
+	"fmt"
+	"io/ioutil"
+	"net/http"
+	"os"
+	"time"
+)
+
+func handleMain(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("Main page"))
+}
+
+func handleMetrics(w http.ResponseWriter, r *http.Request) {
+	w.Header().Add("content-type", "application/json")
+	w.Write([]byte(fmt.Sprintf(`{ "status": "OK", "date": "%s" }`, time.Now().Format("Mon Jan _2 15:04:05 2006"))))
+}
+
+func reqMetrics() {
+	for {
+		time.Sleep(1 * time.Second)
+		requestURL := fmt.Sprintf("http://localhost:8033/metrics")
+
+		req, err := http.NewRequest(http.MethodGet, requestURL, nil)
+		if err != nil {
+			fmt.Printf("client: could not create request: %s\n", err)
+			os.Exit(1)
+		}
+
+		res, err := http.DefaultClient.Do(req)
+		if err != nil {
+			fmt.Printf("client: error making http request: %s\n", err)
+			os.Exit(1)
+		}
+
+		if res.StatusCode >= 200 && res.StatusCode < 300 {
+			resBody, _ := ioutil.ReadAll(res.Body)
+			fmt.Println(string(resBody))
+		}
+	}
+}
+
+func main() {
+	muxMain := http.NewServeMux()
+	muxMetrics := http.NewServeMux()
+
+	muxMain.HandleFunc("/", handleMain)
+	muxMetrics.HandleFunc("/metrics", handleMetrics)
+
+  // Simple way to listen on multiple ports
+	go http.ListenAndServe(":8033", muxMetrics)
+  // Demonstration of requests
+	go reqMetrics()
+  // Main server
+	http.ListenAndServe(":8080", muxMain)
+}
 ```
 
 ### XXX
