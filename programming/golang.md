@@ -125,7 +125,9 @@ func main() {
 }
 ```
 
-### HTTP Client and Server example
+## HTTP
+
+## Multiple Servers and Client example
 ```go
 package main
 
