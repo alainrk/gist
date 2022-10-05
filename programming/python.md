@@ -84,6 +84,41 @@ print(a - b) # set([1, 2])
 print(a ^ b) # set([1, 2, 4, 5])
 ```
 
+## Heap / Priority Queue
+
+### Basics
+```py
+import heapq
+
+q = [5, 7, 9, 1, 3]
+# Heap conversion (optional, you can start with empty list and through pop/push keeping a clean heap)
+heapq.heapify(q)     # [1, 3, 9, 7, 5]
+heapq.heappush(q, 4) # [1, 3, 4, 7, 5, 9]
+heapq.heappop(q)     # 1
+print(q)             # [3, 5, 4, 7, 9]
+```
+### Note
+- Only implemented through MinHeap
+  - For MaxHeap, easy hack: negative number can be used and multiplying by `-1` before returning
+- By default the library take the **first element** of the tuple as the cost
+
+```py
+import heapq
+
+cost = 10
+node = 0
+neighbours = [1, 2, 5]
+
+# Init
+q = [(cost, source, neighbours)]
+# OR
+q = []
+heapq.heappush(q, (cost, source, neighbours))
+
+# Pop
+cost, n, neighs = heapq.heappop(q)
+```
+
 ## Comprehension
 ```py
 # List
