@@ -188,8 +188,38 @@ func main() {
 }
 ```
 
-### XXX
+### Replication of promise.all()
 ```go
+// Source: http://nathan.vegas/blog/errgroup-promise-all.html
+
+var userDetails *user.Details
+var userCards []payment.Card
+var userPurchases []shop.Purchase
+
+errGroup, groupCtx := errgroup.WithContext(ctx)
+
+errGroup.Go(func() error {
+  var err error
+  userDetails, err = user.FindDetailsByID(groupCtx, userID)
+  return err
+})
+
+errGroup.Go(func() error {
+  var err error
+  userCards, err = payment.FindCardsByUserID(groupCtx, userID)
+  return err
+})
+
+errGroup.Go(func() error {
+  var err error
+  userPurchases, err = shop.FindPurchasesByUserID(groupCtx, userID)
+  return err
+})
+
+err := errGroup.Wait()
+if err != nil {
+  // ... handle the error
+}
 ```
 
 ### XXX
