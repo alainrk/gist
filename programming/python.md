@@ -119,6 +119,38 @@ heapq.heappush(q, (cost, source, neighbours))
 cost, n, neighs = heapq.heappop(q)
 ```
 
+### Sorting
+```py
+from dataclasses import dataclass
+from heapq import heappop, heappush, heapify
+
+@dataclass
+class Process:
+  start: int
+  end: int
+  load: int
+
+  # Sort process by end time, used by heapq
+  def __lt__(self, other):
+    return self.end < other.end
+
+  def __repr__(self):
+    return f"<{self.start},{self.end},{self.load}>"
+
+procs = [
+  Process(0, 4, 6),
+  Process(5, 7, 10),
+  Process(2, 3, 2)
+]
+
+# For sort, use the key param
+procs.sort(key=lambda x: x.end)
+# [<2,3,2>, <0,4,6>, <5,7,10>]
+
+heapify(procs)
+# [<2,3,2>, <0,4,6>, <5,7,10>]
+```
+
 ## Comprehension
 ```py
 # List
