@@ -190,7 +190,26 @@ d.update({ "mon": 0, "thu": 4 })
 print(d) # { "mon": 0, "tue": 2, "wed": 3, "thu": 4 }
 ```
 
-## Stacks
+## Deque (Double Ended Queue)
+- Better way to implement a queue/stack
+
+```py
+from collections import deque
+
+# Queue behaviour
+q = deque([1, 2, 3])
+q.append(4) # [1, 2, 3, 4]
+q.popleft() # 1
+# You can also use q.appendleft() for a double ended queue
+q.appendleft(12)
+
+# Stack behaviour
+s = deque([1, 2, 3])
+s.append(4) # [1, 2, 3, 4]
+s.pop() # 4
+```
+
+### Alternative Stack
 ```py
 # LIFO - Using lists
 s = []
@@ -199,7 +218,7 @@ s.append(3)
 s.pop() # 3
 ```
 
-## Queues
+### Alternative Queue
 ```py
 # FIFO - Through library
 from queue import Queue
