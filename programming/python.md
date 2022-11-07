@@ -313,16 +313,22 @@ math.pow(2, 3) # 8.0
 ## Strings
 ```py
 # Basics
-a = "Hello"
-a.upper() # 'HELLO'
-a.lower() # 'hello'
-a.isupper() # False
-a.islower() # False
+s = "Hello"
+s.upper() # 'HELLO'
+s.lower() # 'hello'
+s.isupper() # False
+s.islower() # False
 
 # Join and split
 l = ["one", "two", "three"]
 s = ",".join(l) # "one,two,three"
 s.split(",") # ["one", "two", "three"]
+
+# Trim/Strip
+s = "   Hello   "
+s.strip() # "Hello"
+s.lstrip() # "Hello   "
+s.rstrip() # "   Hello"
 ```
 
 ## Args, Kwargs
