@@ -60,7 +60,7 @@ s.sort(key = lambda item: len(item)) # ['d', 'ee', 'aaa', 'ccccc']
 sorted(l, [reverse])
 ```
 
-## Sets
+## Sets / Hashsets
 ```py
 # Equivalent way to define an UNSORTED collection of UNIQUE values
 s = {1, 1, 2, 2, 3} # 1, 2, 3
@@ -179,7 +179,7 @@ l = [1, 2, 3]
 list(map(double, l)) # [2, 4, 6]
 ```
 
-## Dictionaries
+## Dictionaries / Hashmaps
 ```py
 d = { "mon": 1, "tue": 2, "wed": 3 }
 
@@ -187,6 +187,10 @@ d = { "mon": 1, "tue": 2, "wed": 3 }
 d.keys() # ["mon", "tue", "wed"]
 d.values() # [1, 2, 3]
 d.items() # [("mon": 1), ("tue": 2), ("wed": 3)]
+
+# Remove a pair
+del d["mon"]
+d.pop("mon") # Returns the value of the removed pair
 
 # Update in batch
 d.update({ "mon": 0, "thu": 4 })
