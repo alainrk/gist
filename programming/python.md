@@ -53,6 +53,9 @@ l = [2, 3, 1, 6]
 l.sort() # [1, 2, 3, 6]
 ## Descending
 l.sort(reverse = True) # [6, 3, 2, 1]
+## Custom sorting
+s = ['aaa', 'd', 'ccccc', 'ee']
+s.sort(key = lambda item: len(item)) # ['d', 'ee', 'aaa', 'ccccc']
 # Returns a new sorted list
 sorted(l, [reverse])
 ```
